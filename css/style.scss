@@ -1,0 +1,149 @@
+/*=====  My Own CSS  ======*/
+/*General Styles*/
+*{/*My own reset just to be certain of things the star is a universal selector so it selects every single element. but has the lowest level of importance in css selectors*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*With this any padding applied will act within the element and not increase its size instead*/
+  font-family: 'Segoe UI', sans-serif;
+}
+
+html, body{
+  overflow-x: hidden;/*to hide any overlapping of elements horizontally*/
+  overflow-y: auto;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-middle{
+  align-items: center;
+}
+
+.just-center{
+  justify-content: center;
+}
+
+.just-btw{
+  justify-content: space-between;
+}
+
+a{
+  &:hover, &:link, &:active, &:focus{
+    text-decoration: none;
+  }
+}
+
+.btn{
+  display: flex;
+  width: auto;
+  padding: 7px 20px;
+  box-shadow: 0 13px 20px -3px rgba(101, 101, 101, 0.62);
+  position: relative;
+  top: 0;
+  transition: all .3s ease-in-out;
+  &:hover{
+    top: -3px;
+    box-shadow: 0 16px 20px -10px rgba(101, 101, 101, 0.62);
+  }
+  &.btn-white-bordered{
+    border: 1px white solid;
+    color: #ffffff;
+    transition: all .5s ease-in-out;/*Animate how every property of this element changes state, e.g hover state*/
+    &:hover{/*What happens when you hover over the bordered btn*/
+      border: 1px #bfbfbf solid;
+      color: #bfbfbf;
+    }
+  }
+  &.btn-solid-red{
+    color: #ffffff;
+    background: #FD5353;
+    transition: all .5s ease-in-out;
+    &:hover{
+      background: #ce5151;
+    }
+  }
+}
+
+.border-rounded{
+  border-radius: 25px;
+}
+.container{
+  max-width: 90%;
+  margin: 0 auto;/*code to centralize the container so long as there is a fixed width*/
+}
+ /*i write my helper classes for padding and margin*/
+
+$spaceamounts: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
+
+ /*i write my helper classes for padding and margin*/
+
+.w50\@m100{
+  flex-basis: 50%;
+  @media screen and (max-width: 959px) {
+    flex-basis: 100%;
+  }
+}
+
+.head-title{
+  font-family: 'Muli', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+
+.muted-text{
+  color: #747474;
+  font-family: 'Muli', sans-serif;
+}
+input{
+  outline: none!important;
+  border: 1px solid #747474;
+  padding: 0 10px;
+}
+
+/*General Styles*/
+
+header {
+  min-height: 100vh;/*setting the minimum height to 100% of the browser view height this look at 1vh as a unit for 1% of browser view width*/
+  width: 100%;/*Easy to understand. 100% width of the browser there is also 100vw but then it won't factor in the scrollbar amongst other little things across the span of the screen*/
+  background: url(../img/headerBG.png) no-repeat;
+  background-position-x: 43vw;
+  background-position-y: -53vh;
+  background-size: cover;
+  nav{
+    height: 70px;
+  }
+  .input-btn-holder{
+    min-height: 100px;
+    input{
+      height: 50px;
+      min-width: 60%;
+    }
+    a{
+      line-height: 50px;
+      padding: 0 30px;
+    }
+  }
+  .img-grid{
+    width: 100%;
+    img{
+      height: 35px;
+    }
+  }
+}
+.logo{
+  font-weight: bold;
+}
