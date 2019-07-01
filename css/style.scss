@@ -10,6 +10,7 @@
 html, body{
   overflow-x: hidden;/*to hide any overlapping of elements horizontally*/
   overflow-y: auto;
+  background: #f9f9f9;
 }
 .flex{
   display: flex;
@@ -32,6 +33,26 @@ a{
   &:hover, &:link, &:active, &:focus{
     text-decoration: none;
   }
+}
+
+.w1\/3\@m100{
+  flex-basis: calc(100% / 3);
+}
+.text-center{
+  text-align: center;
+}
+
+.img-full img{
+  width: 100%;
+}
+
+.light-txt{
+  font-weight: lighter;
+  font-family: 'Muli', sans-serif;
+}
+
+.content{
+  padding: 20px;
 }
 
 .btn{
@@ -68,6 +89,32 @@ a{
 .border-rounded{
   border-radius: 25px;
 }
+.inline-block{
+  display: inline-block;
+}
+a.inline-block{
+  position: relative;
+  color: #000;
+  font-weight: 600;
+  .arrow{
+    position: absolute;
+    display: block;
+    height: 60%;
+    top: 0;
+    left: 105%;
+    transition: all .3s;
+    img{
+      height: 100%;
+      width: auto;
+    }
+  }
+  &:hover{
+    .arrow{
+      left: 110%;
+    }
+  }
+}
+
 .container{
   max-width: 90%;
   margin: 0 auto;/*code to centralize the container so long as there is a fixed width*/
@@ -114,6 +161,19 @@ input{
   padding: 0 10px;
 }
 
+.heading-primary{
+  font-family: 'Muli', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+.section-title{
+  width: 100%;
+  text-align: center;
+  .heading-primary{
+    width: 50%;
+  }
+}
+
 /*General Styles*/
 
 header {
@@ -122,7 +182,7 @@ header {
   background: url(../img/headerBG.png) no-repeat;
   background-position-x: 43vw;
   background-position-y: -53vh;
-  background-size: cover;
+  background-size: 100% 150%;
   nav{
     height: 70px;
   }
@@ -146,4 +206,12 @@ header {
 }
 .logo{
   font-weight: bold;
+}
+/*Style for the body class*/
+.body{
+  background: url(../img/bodyBG.png) no-repeat;
+  min-height: 100vh;
+  background-size: 140vw auto;
+  background-position-x: -30vw;
+  background-position-y: 20vh;
 }
