@@ -40,6 +40,11 @@ a:hover, a:link, a:active, a:focus {
 .w1\/3\@m100 {
   flex-basis: calc(100% / 3);
 }
+@media screen and (max-width: 959px) {
+  .w1\/3\@m100 {
+    flex-basis: 100%;
+  }
+}
 
 .text-center {
   text-align: center;
@@ -553,6 +558,18 @@ input {
 }
 
 /*General Styles*/
+.input-btn-holder {
+  min-height: 100px;
+}
+.input-btn-holder input {
+  height: 50px;
+  min-width: 60%;
+}
+.input-btn-holder a {
+  line-height: 50px;
+  padding: 0 30px;
+}
+
 header {
   min-height: 100vh;
   /*setting the minimum height to 100% of the browser view height this look at 1vh as a unit for 1% of browser view width*/
@@ -561,24 +578,14 @@ header {
   background: url(../img/headerBG.png) no-repeat;
   background-position-x: 43vw;
   background-position-y: -53vh;
-  background-size: 100% 150%;
+  background-size: 100% 140%;
 }
 header nav {
   height: 70px;
 }
-header .input-btn-holder {
-  min-height: 100px;
-}
-header .input-btn-holder input {
-  height: 50px;
-  min-width: 60%;
-}
-header .input-btn-holder a {
-  line-height: 50px;
-  padding: 0 30px;
-}
 header .img-grid {
   width: 100%;
+  min-height: 300px;
 }
 header .img-grid img {
   height: 35px;
@@ -594,7 +601,64 @@ header .img-grid img {
   min-height: 100vh;
   background-size: 140vw auto;
   background-position-x: -30vw;
-  background-position-y: 20vh;
+  background-position-y: 60vh;
+}
+
+.footer-plus-media {
+  background: url(../img/footBG.png) no-repeat;
+  background-size: 120vw auto;
+  background-position-x: 0;
+  background-position-y: 0;
+}
+
+.testimonial {
+  flex-basis: 30%;
+  padding: 20px;
+  margin-right: 20px;
+  box-shadow: 0 0 20px -10px rgba(128, 128, 128, 0.82);
+  position: relative;
+  background: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.testimonial:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 5px;
+  left: 0;
+  background: #FD5353;
+  width: 50%;
+  transition: all 0.3s ease-in-out;
+}
+.testimonial:hover:before {
+  width: 100%;
+}
+@media screen and (max-width: 959px) {
+  .testimonial {
+    flex-basis: 80%;
+  }
+}
+.testimonial .stars img {
+  width: 20px;
+}
+.testimonial .avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.testimonial .avatar img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.foot {
+  min-height: 50vh;
+}
+
+.w70 {
+  width: 70%;
 }
 
 /*# sourceMappingURL=style.css.map */
